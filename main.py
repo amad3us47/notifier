@@ -5,15 +5,15 @@ import filecmp
 import shutil
 import difflib
 from datetime import datetime
-file1="C:\\Users\\chotu\\Desktop\\stocks\\o.txt"
-file2="C:\\Users\\chotu\\Desktop\\stocks\\new.txt"
+file1="o.txt"
+file2="new.txt"
 header = {
     'authorization': 'MTE3NzI2NjM3MzYxODA2MTQ3Nw.Gfs-tu.QP_yvc0aqe9vZPWhV6AjDZHWmK6jFR9naBD3L0'
 }
 #current=os.path.getsize('C:\\Users\\chotu\\Desktop\\stocks\\o.txt')
 for i in range(10000000):
     os.system('curl https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/domains.txt -o o.txt')
-    with open("C:\\Users\\chotu\\Desktop\\stocks\\o.txt",'r') as file1,open("C:\\Users\\chotu\\Desktop\\stocks\\new.txt",'r') as file2:
+    with open("o.txt",'r') as file1,open("new.txt",'r') as file2:
         diff=difflib.unified_diff(file1.readlines(),file2.readlines(),lineterm='')
         for line in diff:
             print(line,datetime.now())
