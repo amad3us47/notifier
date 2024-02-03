@@ -27,15 +27,15 @@ jobs:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: python main.py
           
-      - name: commit files
+      - name: commit new files in the main directory
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+          git add $(git ls-files --others --exclude-standard)
+          git diff-index --quiet HEAD || (git commit -m "Add new files" && echo "Changes committed successfully.")
           
       - name: push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
+          branch: main
