@@ -6,3 +6,5 @@ new=os.path.getsize('/home/runner/work/automation/automation/o.txt')
 if new > current:
         current=new
         os.system('curl -d "new added check now" ntfy.sh/bbrsmend')
+else:
+        current=new
