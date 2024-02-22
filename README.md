@@ -1,1 +1,1 @@
-ok
+##bug bounty new targets notifier
