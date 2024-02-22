@@ -1,1 +1,1 @@
-##bug bounty new targets notifier
+#bug bounty new targets notifier
